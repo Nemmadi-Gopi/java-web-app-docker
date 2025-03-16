@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -27,7 +28,7 @@
     </properties>
 
     <dependencies>
-        <!-- test dependencies -->
+        <!-- Test Dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -49,29 +50,32 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- compile dependencies -->
+        <!-- Compile Dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
-        <!-- provided dependencies -->
+        <!-- Provided Dependencies -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -85,13 +89,12 @@
             <version>1.2</version>
         </dependency>
 
-        <!-- Logback for logging -->
+        <!-- Logging Dependencies -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -100,24 +103,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version> <!-- Updated version -->
+                <version>3.8.1</version> <!-- Updated to the latest stable version -->
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
             </plugin>
 
-            <!-- Maven WAR Plugin (Updated to avoid API incompatibility) -->
+            <!-- Maven WAR Plugin (Updated Version) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version> <!-- Updated version -->
+                <version>3.3.1</version> <!-- Updated to the latest stable version -->
                 <configuration>
-                    <webappDirectory>${project.build.directory}/webapps</webappDirectory>
-                    <failOnMissingWebXml>false</failOnMissingWebXml> <!-- Optional: Disable web.xml validation -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml> <!-- Optional, to avoid web.xml errors -->
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
