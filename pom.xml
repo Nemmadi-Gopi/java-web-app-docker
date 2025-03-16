@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>com.mt</groupId>
     <artifactId>java-web-app</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-    
+
     <name>Maven Web Application</name>
     <url>http://mithuntechnologies.com</url>
-    
+
     <description>Maven Web Project</description>
 
     <organization>
@@ -79,13 +79,13 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-        
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        
+
         <!-- logback dependency -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -95,6 +95,17 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Define the version of the war plugin here to ensure compatibility -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.1</version> <!-- Updated WAR plugin version -->
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <!-- Compiler Plugin -->
             <plugin>
@@ -111,8 +122,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version> <!-- Updated version to a stable version -->
+                <version>3.3.1</version> <!-- Updated WAR plugin version -->
             </plugin>
         </plugins>
     </build>
+
 </project>
