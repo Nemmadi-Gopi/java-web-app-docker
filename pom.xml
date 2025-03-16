@@ -27,7 +27,6 @@
     </properties>
 
     <dependencies>
-
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
@@ -108,11 +107,11 @@
                 </configuration>
             </plugin>
 
-            <!-- Maven WAR Plugin -->
+            <!-- Maven WAR Plugin (Updated to avoid API incompatibility) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version> <!-- Updated to avoid API incompatibility -->
+                <version>3.3.1</version> <!-- Updated version -->
                 <configuration>
                     <webappDirectory>${project.build.directory}/webapps</webappDirectory>
                     <failOnMissingWebXml>false</failOnMissingWebXml> <!-- Optional: Disable web.xml validation -->
