@@ -28,6 +28,7 @@
     </properties>
 
     <dependencies>
+
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
@@ -86,44 +87,40 @@
             <version>1.2</version>
         </dependency>
 
-        <!-- logback dependency -->
+        <!-- Logback for logging -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
+
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <!-- Define the version of the war plugin here to ensure compatibility -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.3.1</version> <!-- Updated WAR plugin version -->
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
         <plugins>
-            <!-- Compiler Plugin -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version> <!-- Updated version to a more recent one -->
+                <version>3.8.1</version> <!-- Updated version -->
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
             </plugin>
 
-            <!-- WAR Plugin -->
+            <!-- Maven WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version> <!-- Updated WAR plugin version -->
+                <version>3.3.1</version> <!-- Updated to avoid API incompatibility -->
+                <configuration>
+                    <webappDirectory>${project.build.directory}/webapps</webappDirectory>
+                    <failOnMissingWebXml>false</failOnMissingWebXml> <!-- Optional: Disable web.xml validation -->
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
+
 </project>
